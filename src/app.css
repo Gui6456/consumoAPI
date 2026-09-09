@@ -1,4 +1,14 @@
 body {
     background-color: black;
     color: gold;
+    
+}
+
+.imagem_iniciais {
+    width: 25px;
+    height: 25px;
+}
+
+.imagem_pokemon {
+
 }
