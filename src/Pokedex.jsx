@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./pokedex.css";
 
 function Pokedex() {
 
@@ -29,15 +30,42 @@ function Pokedex() {
                         <h2>Nome: {pokemon.name}</h2>
 
                         <p> Tipo:
-                                  {
-                                        pokemon.types ?
-                                        pokemon.types[0].type.name 
-                                  : 
-                                        ""  
-                                  }
+                            <span className="tipo">
+                                {pokemon.types ? pokemon.types[0].type.name : "" }      
+                            </span>
                         </p>
 
-                        <img {pokemon} src={"https://placehold.co/200"} />
+                        <p> Habilidades: 
+
+                            {
+                                pokemon.abilities ?
+                                pokemon.abilities.map((habilidades) => (
+                                    <span className="habilidade">
+                                        {habilidades.ability.name}
+                                        <br/>
+                                    </span>
+                                ))
+                            :    
+                                ""
+                            }
+
+                        </p>
+                    <div className="status">
+                        <p> Status base: </p>
+
+                            {
+                                pokemon.stats ?
+                                pokemon.stats.map((status) => (
+                                    <span key={status.stat.name} className="status-item">
+                                        {status.stat.name}: {status.base_stat}
+                                    </span>
+                                ))
+                            :
+                                ""
+                            }
+                    </div>
+
+                        <img src={pokemon.sprites?.versions["generation-v"]["black-white"].animated.front_default} />
 
                     </li>
                 </ul>
