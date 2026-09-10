@@ -28,9 +28,10 @@ function Pokedex() {
 
                         <h2>Nome: {pokemon.name}</h2>
 
+                    {/* O index serve como um contador, começa do 0 e procede, nesse caso ele é necessário para ver as posições, sendo o type 0(1) e o type 1(2) */}
                         <p> Tipo:
                             {pokemon.types?.map((item, index) => (
-                                <span key={item.type.name} className="tipo">
+                                <span className="tipo">  
                                     {index > 0 && " and "}
                                     {item.type.name}{" "}     
                                 </span>
@@ -58,7 +59,7 @@ function Pokedex() {
                             {
                                 pokemon.stats ?
                                 pokemon.stats.map((status) => (
-                                    <span key={status.stat.name} className="status-item">
+                                    <span className="status-item">
                                         {status.stat.name}: {status.base_stat}
                                     </span>
                                 ))
