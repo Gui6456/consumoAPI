@@ -29,9 +29,12 @@ function Pokedex() {
                         <h2>Nome: {pokemon.name}</h2>
 
                         <p> Tipo:
-                            <span className="tipo">
-                                {pokemon.types ? pokemon.types[0].type.name : "" }      
-                            </span>
+                            {pokemon.types?.map((item, index) => (
+                                <span key={item.type.name} className="tipo">
+                                    {index > 0 && " and "}
+                                    {item.type.name}{" "}     
+                                </span>
+                            ))}
                         </p>
 
                         <p> Habilidades: 
