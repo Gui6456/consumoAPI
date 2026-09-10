@@ -9,7 +9,6 @@ function Pokedex() {
     async function research_name (name) {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
         const data = await response.json()
-        console.log(data)
         setPokemon(data)
     }
 
