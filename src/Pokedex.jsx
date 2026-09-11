@@ -68,9 +68,10 @@ function Pokedex() {
                                 ""
                             }
                     </div>
-
-                        <img src={pokemon?.sprites?.versions["generation-v"]["black-white"].animated.front_default} />
-
+                        <div>
+                            <img src={pokemon?.sprites?.versions["generation-v"]["black-white"].animated.front_default} />
+                            <img src={pokemon?.sprites?.versions["generation-v"]["black-white"].animated.front_shiny} />
+                        </div>
                     </li>
                 </ul>
 
